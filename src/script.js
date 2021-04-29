@@ -53,11 +53,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
         //change color of button if we scrolled to footer
          //formula to calculate position there to change color
-         const position = footer.offsetTop;
-         const footerHeight = footer.getBoundingClientRect().height;
-         console.log(position - (navHeight + footerHeight + 100))
-         const target = position - (navHeight + footerHeight + 100)
-        if (offset > target) {
+         //not working properly :(
+        //  const position = footer.offsetTop;
+        //  const footerHeight = footer.getBoundingClientRect().height;
+        //  const target = position - (navHeight + footerHeight + 100)
+        if (offset > 2300) {
             scrollToTop.style.color = '#fff';
         } else {
             scrollToTop.style.color = '';
@@ -75,7 +75,25 @@ window.addEventListener('DOMContentLoaded', () => {
             //nav to specific spot, use slice to remove #
             const id = e.currentTarget.getAttribute('href').slice(1);
             const element = document.getElementById(id);
-            let pos = element.offsetTop
+            //get position where to scroll
+            //need to substract navigation height, because it is fixed and removed from flow
+            const navHeight = nav.getBoundingClientRect().height;
+            let pos = element.offsetTop - navHeight;
+            //on small screen we have to open menu, and it will add height
+            //so we check if height more than navheight then we add to position this value
+            const menuHeight = menu.getBoundingClientRect().height;
+            if (navHeight > 83) {
+                pos = element.offsetTop + (menuHeight - navHeight);
+            }
+            //use scrollTo
+            window.scrollTo({
+                left: 0,
+                top: pos
+            })
+
+            //close navbar after click
+            menu.style.height = '0px';
+            hamburger.classList.remove('is-active')
         })
     })
    
