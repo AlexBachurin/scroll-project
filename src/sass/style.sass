@@ -28,18 +28,19 @@ body
     display: none
 
 .nav
-    display: flex
-    align-items: center
-    justify-content: space-between
-    width: 90vw
-    max-width: 1170px
-    margin: 0 auto
+    &-container
+        width: 90vw
+        max-width: 1170px
+        margin: 0 auto
+        display: flex
+        align-items: center
+        justify-content: space-between
     &__header
         display: flex
         justify-content: space-between
-        align-items: center     
+        align-items: center
     &__menu
-        height: auto 
+        height: auto
         &-block
             display: flex
             justify-content: space-between
@@ -106,6 +107,14 @@ body
     color: #fff
     font-size: 25px
 
+.fixed-nav
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    background-color: #fff
 
+.fixed-nav .nav__menu-link
+    color: #000
 
 @import _media.sass
