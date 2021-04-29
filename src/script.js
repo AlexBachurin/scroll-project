@@ -96,6 +96,17 @@ window.addEventListener('DOMContentLoaded', () => {
             hamburger.classList.remove('is-active')
         })
     })
+
+
+    // ****** get year and place it on page *******
+
+    const date = document.querySelector('.footer__date');
+
+    const todayDate = new Date();
+
+    const year = todayDate.getFullYear();
+
+    date.textContent = year;
    
    
 })
