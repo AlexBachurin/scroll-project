@@ -26,7 +26,7 @@
             background-color: #fff
         &__menu
             transition: 0.8s all cubic-bezier(0.46, 0.03, 0.52, 0.96)
-            max-height: 0
+            height: 0
             overflow: hidden
             background-color: #fff
             width: 100vw
@@ -45,6 +45,12 @@
 @media screen and ( max-width: 575px )
     .container
         max-width: 100%
+
+@media screen and ( min-width: 769px )
+    .nav
+        &__menu
+            height: auto !important
+    
     
     
     
