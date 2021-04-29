@@ -22,9 +22,13 @@ window.addEventListener('DOMContentLoaded', () => {
     })
 
     // ****fixed navbar*****
+
     //get height of navbar
     const nav = document.querySelector('.nav'),
-          scrollToTop = document.querySelector('.scrollToTop');
+          scrollToTop = document.querySelector('.scrollToTop'),
+          footer = document.querySelector('.footer');
+          
+
           
     //use window scroll event to see when we need add class to navbar
     window.addEventListener('scroll', () => {
@@ -32,7 +36,6 @@ window.addEventListener('DOMContentLoaded', () => {
         //get scroll offset
         const offset = window.pageYOffset;
         //check then we have offset > navbar height we make navbar fixed
-        console.log(offset)
         if (offset > navHeight) {
             nav.classList.add('fixed-nav');
         } else {
@@ -41,15 +44,40 @@ window.addEventListener('DOMContentLoaded', () => {
 
         // **** scroll to top button ****
 
+        //if we scrolled more than 1000px show our button
         if (offset > 1000) {
             scrollToTop.style.display = 'block';
         } else {
             scrollToTop.style.display = 'none';
         }
-        if (offset > 2300) {
+
+        //change color of button if we scrolled to footer
+         //formula to calculate position there to change color
+         const position = footer.offsetTop;
+         const footerHeight = footer.getBoundingClientRect().height;
+         console.log(position - (navHeight + footerHeight + 100))
+         const target = position - (navHeight + footerHeight + 100)
+        if (offset > target) {
             scrollToTop.style.color = '#fff';
         } else {
             scrollToTop.style.color = '';
         }
     })
+
+
+    // ***** links scroll *****
+
+    const links = document.querySelectorAll('.nav__menu-link');
+
+    links.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            //nav to specific spot, use slice to remove #
+            const id = e.currentTarget.getAttribute('href').slice(1);
+            const element = document.getElementById(id);
+            let pos = element.offsetTop
+        })
+    })
+   
+   
 })
