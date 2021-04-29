@@ -23,7 +23,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // ****fixed navbar*****
     //get height of navbar
-    const nav = document.querySelector('.nav');
+    const nav = document.querySelector('.nav'),
+          scrollToTop = document.querySelector('.scrollToTop');
           
     //use window scroll event to see when we need add class to navbar
     window.addEventListener('scroll', () => {
@@ -31,10 +32,24 @@ window.addEventListener('DOMContentLoaded', () => {
         //get scroll offset
         const offset = window.pageYOffset;
         //check then we have offset > navbar height we make navbar fixed
+        console.log(offset)
         if (offset > navHeight) {
             nav.classList.add('fixed-nav');
         } else {
             nav.classList.remove('fixed-nav')
+        }
+
+        // **** scroll to top button ****
+
+        if (offset > 1000) {
+            scrollToTop.style.display = 'block';
+        } else {
+            scrollToTop.style.display = 'none';
+        }
+        if (offset > 2300) {
+            scrollToTop.style.color = '#fff';
+        } else {
+            scrollToTop.style.color = '';
         }
     })
 })
