@@ -1,0 +1,51 @@
+@media screen and ( max-width: 1200px )
+    .container
+        max-width: 960px
+
+@media screen and ( max-width: 991px )
+    .container
+        max-width: 720px
+    .menu
+        &-link
+            margin-right: 20px
+            font-size: 20px
+
+@media screen and ( max-width: 767px )
+    .container
+        max-width: 540px
+    .hamburger
+        display: block
+    .nav
+        display: block
+        margin: 0
+        width: 100vw
+        &__header
+            width: 100%
+            margin: 0 auto
+            padding: 0 20px
+            background-color: #fff
+        &__menu
+            transition: 0.8s all cubic-bezier(0.46, 0.03, 0.52, 0.96)
+            max-height: 0
+            overflow: hidden
+            background-color: #fff
+            width: 100vw
+            &-block
+                flex-direction: column
+                padding: 30px 30px
+            &-link
+                display: block
+                color: #000
+                margin-bottom: 30px
+                width: 100%
+                
+                
+        
+
+@media screen and ( max-width: 575px )
+    .container
+        max-width: 100%
+    
+    
+    
+    

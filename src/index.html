@@ -10,39 +10,44 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="container">
+    <header class="header" id="header">
+        
             <nav class="nav">
-                <div class="nav__logo">
-                    <img class="nav__logo-img" src="https://res.cloudinary.com/dljezd6qv/image/upload/v1619652588/scroll-project/scroll-project_logo-c_scale_w_80_sp5rm1.png"
-                        alt="logo">
+                <div class="nav__header">
+                    <div class="nav__logo">
+                        <img class="nav__logo-img" src="https://res.cloudinary.com/dljezd6qv/image/upload/v1619652588/scroll-project/scroll-project_logo-c_scale_w_80_sp5rm1.png"
+                            alt="logo">
+                    </div>
+                   
+                    <button class="hamburger hamburger--spin" type="button">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
                 </div>
                 <div class="nav__menu">
                     <ul class="nav__menu-block">
-                        <li class="nav__menu-item"><a href="" class="nav__menu-link">Home</a></li>
-                        <li class="nav__menu-item"><a href="" class="nav__menu-link">About</a></li>
-                        <li class="nav__menu-item"><a href="" class="nav__menu-link">Services</a></li>
-                        <li class="nav__menu-item"><a href="" class="nav__menu-link">Tours</a></li>
+                        <li class="nav__menu-item"><a href="#header" class="nav__menu-link">Home</a></li>
+                        <li class="nav__menu-item"><a href="#about" class="nav__menu-link">About</a></li>
+                        <li class="nav__menu-item"><a href="#services" class="nav__menu-link">Services</a></li>
+                        <li class="nav__menu-item"><a href="#tours" class="nav__menu-link">Tours</a></li>
                     </ul>
-                </div>
-                <button class="hamburger hamburger--spin" type="button">
-                    <span class="hamburger-box">
-                        <span class="hamburger-inner"></span>
-                    </span>
-                </button>
-
+                </div>    
             </nav>
-            <div class="promo">
-                <div class="promo__content">
-                    <h1 class="promo__title">Scroll Project</h1>
-                    <div class="promo__descr">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas eos neque
-                        sunt
-                        in? Id, necessitatibus quos quisquam distinctio laudantium fugiat?
+            <div class="container">
+                <div class="promo">
+                    <div class="promo__content">
+                        <h1 class="promo__title">Scroll Project</h1>
+                        <div class="promo__descr">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas eos neque
+                            sunt
+                            in? Id, necessitatibus quos quisquam distinctio laudantium fugiat?
+                        </div>
+                        <button class="promo__btn">Explore tours</button>
                     </div>
-                    <button class="promo__btn">Explore tours</button>
                 </div>
             </div>
-        </div>
+           
+        
     </header>
     <section class="section" id="about">
         <h2 class="title"> About Us</h2>
@@ -58,6 +63,8 @@
             <div class="footer__copy">Copyright &copy; Bacha tours company <span class="footer__date">2021. All rights Reserved</span> </div>
         </div>
     </footer>
+    
+    <script src="script.js"></script>
 </body>
 
 </html>

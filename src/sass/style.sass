@@ -2,7 +2,6 @@
 @import libs/_reset
 @import libs/_hamburgers
 
-
 body
     font-family: Roboto, sans-serif
 
@@ -30,16 +29,21 @@ body
 
 .nav
     display: flex
-    justify-content: space-between 
     align-items: center
-    &__logo
-        
+    justify-content: space-between
+    width: 90vw
+    max-width: 1170px
+    margin: 0 auto
+    &__header
+        display: flex
+        justify-content: space-between
+        align-items: center     
     &__menu
         &-block
             display: flex
             justify-content: space-between
-            width: 25vw
-        &-link 
+        &-link
+            margin-right: 30px
             font-size: 25px
             text-decoration: none
             color: #fff
@@ -81,7 +85,7 @@ body
         &:hover
             background-color: #fff
             color: #7FFFD4
-    
+
 .section
     min-height: 740px
     text-align: center
@@ -100,3 +104,8 @@ body
     background-color: #4B0082
     color: #fff
     font-size: 25px
+
+.show-nav
+    max-height: 500px !important
+
+@import _media.sass
